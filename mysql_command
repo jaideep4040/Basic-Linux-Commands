@@ -1,0 +1,117 @@
+============================================
+MySQL Database
+============================================
+
+https://www.digitalocean.com/community/tutorials/a-basic-mysql-tutorial
+
+
+sudo apt-get install mysql-server
+mysql -u root -p
+
+
+SHOW DATABASES;
+
+CREATE DATABASE database name;
+
+
+
+DROP DATABASE database name;
+
+
+How to Access a MySQL Database
+ USE events;
+SHOW tables;
+
+ Create a MySQL Table
+CREATE TABLE potluck (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(20),
+food VARCHAR(30),
+confirmed CHAR(1),
+signup_date DATE);
+
+
+
+
+Add Information to a MySQL Table
+INSERT INTO `potluck` (`id`,`name`,`food`,`confirmed`,`signup_date`) VALUES (NULL, "John", "Casserole","Y", '2012-04-11');
+
+
+Update Information in the Table
+
+UPDATE `potluck`
+SET
+`confirmed` = 'Y'
+WHERE `potluck`.`name` ='Sandy';
+
+
+Add and Delete a Column
+ALTER TABLE potluck ADD email VARCHAR(40);
+
+
+ALTER TABLE potluck ADD email VARCHAR(40) AFTER name;
+
+
+Just as you can add a column, you can delete one as well:
+ALTER TABLE potluck DROP email;
+
+
+How to Delete a Row
+DELETE from [table name] where [column name]=[field text];
+
+
+Backup of a single database
+
+mysqldump -u [user] -p [database_name] > [filename].sql
+
+
+Backup more than one database
+
+mysqldump -u [user] -p –databases [database_name_1] [database_name_2] [database_name_n] > [filename].sql
+
+
+
+Backup of all databases
+mysqldump -u [user] -p –all-databases > [file_name].sql
+
+
+
+
+
+
+Restore Mysql database:
+=======================================================
+
+Using the dump file, it is possible to restore the database with all its tables to a new MySQL server.
+
+Create the database
+
+mysql -u [user] -p
+
+The [user]field in this case will usually be root. At the mysql> root.
+
+create database [database_name];
+
+Create a user for that database, it is actually not needed, but it is a good security measure.
+
+grant all privileges on [database_name].* to [new_user]@[hostname] identified by [new_user_password];
+
+exit;
+
+Once again on the Linux command line prompt.
+
+Restore database dump file
+
+mysql -u [new_user] -p [database_name] < [file_name].sql
+
+
+
+
+
+
+================================================
+check the current running quries on mysql:
+
+show processlist;
+
+=================================================
+
