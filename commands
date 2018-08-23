@@ -1,0 +1,122 @@
+inux Commands:
+=======================================================
+Linux Command to create a symbolic link to file or directory
+ln -s file1 lnk1
+
+Create a physical link to file or directory
+ln file1 lnk1
+
+
+ View files of directory
+ls -F
+
+
+Move a file or directory
+mv dir/file /new_path
+
+
+
+ With the help of nice command, users can set or change the priorities of processes in Linux.
+ nice
+ 
+ 
+ To search all files that end in ".conf"
+ find /path -type f -name "*.conf"
+ 
+ 
+ find / -perm 644
+ 
+ 
+  Prints the number of lines in a file.
+ wc -l file_name OR cat file_name | wc -l
+ 
+ 
+ 
+ To Create tar Archive File
+ tar -cvf compress.tar /path/directory
+ 
+     ​c - create a archive file.
+    x - extract a archive file.
+    v - show the progress of archive file.
+    f - filename of archive file.
+    t - viewing content of archive file.
+    j - filter archive through bzip2.
+    z - filter archive through gzip.
+    r - append or update files/directories to existing archive file.
+    w - verify a archive file.
+    
+    
+    
+    
+    To Untar tar Archive File
+    tar -xvf compress.tar
+    
+    
+    To Untar tar Archive File in a specific directory
+    tar -xvf compress.tar -C /path/to diretory
+    
+    
+    Extract Group of Files using Wildcard from tar Archive
+    tar -xvf compress.tar --wildcards '*.txt'
+    
+    
+    
+    
+    About TAR.GZ
+    
+    To Create tar.gz Archive File
+    tar -cvzf compresstar.gz /path/directory
+    
+    
+    To Untar tar.gz Archive File
+    tar -zxvf compress.tar.gz
+    
+    
+    Untar Single file from tar.gz File
+    tar -zxvf compress.tar.gz file1.txt
+    
+
+
+Commands for ZIP    
+    To zipping a file or folder.
+zip compress.zip file1 file2 folder1
+
+
+
+To Zip individual files to a zip archive
+
+zip compress.zip file1 file2 file3
+
+
+content of a folder use -r option
+zip -r compress.zip Folder
+
+
+list all the files stored in a zip file
+unzip -l compress.zip
+
+
+
+Allows write opening of a file only append mode
+chattr +a file1
+
+
+
+To view your network hostname
+uname -n
+
+
+ scp allows you to secure copy files to and from another host in the network.
+ scp -r -P 22 (ssh port) user@source_hostname:/path/to/dir /destination/path
+ 
+ 
+ tail command
+ $ tail -n 4 /etc/passwd
+ 
+ 
+ $ wc /etc/passwd
+ 
+ 
+ $ grep nologin /etc/passwd
+ 
+
